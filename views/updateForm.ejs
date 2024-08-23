@@ -1,19 +1,34 @@
-<form action="/product/update/<%= product.id %>" method="post">
-  <label for="">
-    Product:
-    <input type="text" name="name" value="<%= product.name %>" required/>
-  </label>
-  <label for="">
-    Amount: 
-    <input type="number" name="amount" value="<%= product.amount %>" required/></label>
-  <label for="">
-    Category:
-    <select name="category" id=""> 
-      <% categories.forEach(category => { %>
-        <option value="<%= category %>" <%= category === product.category ? 'selected' : '' %>><%= category %></option>
-      <% }); %>
-    </select>
-  </label>
-  
-  <button type="submit">Update</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Update Product</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/form.css" />
+</head>
+<body>
+  <form action="/product/update/<%= product.id %>" method="post">
+    <label for="">
+      Product:
+      <input type="text" name="name" value="<%= product.name %>" required/>
+    </label>
+    <label for="">
+      Amount: 
+      <input type="number" name="amount" value="<%= product.amount %>" required/></label>
+    <label for="">
+      Category:
+      <select name="category" id=""> 
+        <% categories.forEach(category => { %>
+          <option value="<%= category %>" <%= category === product.category ? 'selected' : '' %>><%= category %></option>
+        <% }); %>
+      </select>
+    </label>
+    <button type="submit">Update</button>
+  </form>  
+  <form action="/product" method="get">
+    <button type="submit" class="back">GO BACK</button>
+  </form>
+</body>
+</html>
+

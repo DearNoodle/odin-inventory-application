@@ -1,0 +1,15 @@
+.category-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.add-form {
+  border: solid white 1px;
+  border-radius: 3px;
+  padding: 10px;
+}
+
+.red {
+  color: red;
+}

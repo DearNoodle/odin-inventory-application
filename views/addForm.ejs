@@ -1,20 +1,35 @@
-<form action="/product/add" method="post">
-  <label for="">
-    Product:
-    <input type="text" name="name" required/>
-  </label>
-  <label for="">
-    Amount: 
-    <input type="number" name="amount" required/></label>
-  <label for="">
-    Category:
-    <select name="category" id="" required> 
-      <option value="" disabled selected>Select a Category</option> 
-      <% categories.forEach(category => { %>
-        <option value="<%= category %>"><%= category %></option>
-      <% }); %>
-    </select>
-  </label>
-  <button type="submit">Add</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Product</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/form.css" />
+</head>
+<body>
+  <form action="/product/add" method="post">
+    <label for="">
+      Product:
+      <input type="text" name="name" required/>
+    </label>
+    <label for="">
+      Amount: 
+      <input type="number" name="amount" required/></label>
+    <label for="">
+      Category:
+      <select name="category" id="" required> 
+        <option value="" disabled selected>Select a Category</option> 
+        <% categories.forEach(category => { %>
+          <option value="<%= category %>"><%= category %></option>
+        <% }); %>
+      </select>
+    </label>
+    <button type="submit">Add</button>
+  </form>
+  <form action="/product" method="get">
+    <button type="submit" class="back">GO BACK</button>
+  </form>
+</body>
+</html>
   

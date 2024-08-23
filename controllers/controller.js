@@ -1,7 +1,7 @@
 import query from '../db/queries.js';
 
 async function homePageGet(req, res) {
-  res.render('index', { title: 'MacDonDon Manager Online 2024' });
+  res.render('index');
 }
 
 async function productsGet(req, res) {

@@ -1,0 +1,19 @@
+body {
+  gap: 60px;
+}
+
+button {
+  font-weight: bold;
+  font-size: 40px;
+  color: black;
+  background-color: white;
+  border: dashed black 4px;
+}
+
+.red {
+  color: red;
+}
+
+.yellow {
+  color: yellow;
+}
