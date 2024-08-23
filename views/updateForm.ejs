@@ -1,0 +1,19 @@
+<form action="/product/update/<%= product.id %>" method="post">
+  <label for="">
+    Product:
+    <input type="text" name="name" value="<%= product.name %>" required/>
+  </label>
+  <label for="">
+    Amount: 
+    <input type="number" name="amount" value="<%= product.amount %>" required/></label>
+  <label for="">
+    Category:
+    <select name="category" id=""> 
+      <% categories.forEach(category => { %>
+        <option value="<%= category %>" <%= category === product.category ? 'selected' : '' %>><%= category %></option>
+      <% }); %>
+    </select>
+  </label>
+  
+  <button type="submit">Update</button>
+</form>

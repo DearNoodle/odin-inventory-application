@@ -1,0 +1,12 @@
+<% categories.forEach(category => { %>
+  <form action="/product/category/delete" method="post">
+    <input type="text" hidden name="category" value="<%= category %>">
+    <button type="submit">Delete Category <%= category %></button>
+  </form>
+<% }) %>
+
+<form action="/product/category/add" method="post">
+  <label for="Category: "></label>
+  <input type="text" name="category" required>
+  <button type="submit">Add</button>
+</form>

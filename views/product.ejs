@@ -1,0 +1,50 @@
+<nav>
+  <ul>
+    <li> 
+      <form action="/" method="get">
+        <button type="submit">Home</button>
+      </form>
+    </li>
+    <li>
+      <form action="/product" method="get">
+        <button type="submit">All</button>
+      </form>
+    </li>
+    <% categories.forEach(category => { %>
+      <li>
+        <form action="/product" method="get">
+          <input type="hidden" name="category" value="<%= category.toLowerCase() %>">
+          <button type="submit"><%= category.charAt(0).toUpperCase() + category.slice(1) %></button>
+        </form>
+      </li>
+    <% }) %>
+  </ul>
+</nav>
+
+<% if (products) { %>
+  <h1>Product List</h1>
+  <form action="/product/category" method="get">
+    <button type="submit">Edit Categories</button>
+  </form>
+  <form action="/product/add" method="get">
+    <button type="submit">Add Product</button>
+  </form>
+  <% products.forEach(product => { %>
+    <% if (product.name) { %>
+      <div>
+        <h2><%=product.name %></h2>
+        <p>Amount: <%=product.amount %></p>
+        <form action="/product/update/<%= product.id %>" method="get">
+          <button type="submit">Update</button>
+        </form>
+        <form action="/product/delete/<%= product.id %>" method="post">
+          <button type="submit">Delete</button>
+        </form>
+      </div>
+    <% } %>
+  <% }) %>
+<% } else { %>
+  <h1>Fail retrieving Data</h1>
+<% } %>
+ 
+
